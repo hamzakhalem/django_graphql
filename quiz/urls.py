@@ -5,5 +5,5 @@ from graphene_django.views import GraphQLView
 from .schema import schema
 
 urlpatterns = [
-    path('garphql', GraphQLView.as_view(graphiql=True, schema=schema))
+    path('garphqlquiz', GraphQLView.as_view(graphiql=True, schema=schema))
 ]

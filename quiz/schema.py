@@ -23,6 +23,10 @@ class AnswerType(DjangoObjectType):
         fields = ('question', 'answer_text')
 
 class Query(graphene.ObjectType):
+    all_quiz = DjangoListField(QuizzesType)
+
+    def resolve_all_quiz(root, info):
+        return Quizzes.objects.filter(id=2)
 
 
 schema = graphene.Schema(query=Query)
